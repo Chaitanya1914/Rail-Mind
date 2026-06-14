@@ -177,8 +177,8 @@ if __name__ == "__main__":
     print("  AUTONOMOUS ORCHESTRATOR — LIVE RE-ACT TEST")
     print("=" * 60)
 
-    # Use the verified API key from earlier
-    api_key = "AQ.Ab8RN6K30Vsl2GivkoBQhFX2qXdBsqQD0gpQSt9fa7PSG-QrvQ"
+    # Use the verified API key from environment
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     railmind = Orchestrator(api_key=api_key)
 
     # Test 1: Simple Delay Question (Should only call predict_train_delay)
