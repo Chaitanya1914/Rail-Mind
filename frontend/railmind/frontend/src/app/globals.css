@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-card: #111827;
+  --bg-glass: rgba(17, 24, 39, 0.7);
+  --border: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+
+  --accent-green: #00ff88;
+  --accent-yellow: #ffd700;
+  --accent-red: #ff3366;
+  --accent-blue: #00b4ff;
+  --accent-cyan: #06b6d4;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Glassmorphism card utility */
+.glass-card {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* Glow effects */
+.glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+.glow-red {
+  box-shadow: 0 0 15px rgba(255, 51, 102, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.3);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+
+/* Custom animations */
+@keyframes pulse-red {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px rgba(255, 51, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 51, 102, 0);
+  }
+}
+
+.pulse-red-marker {
+  animation: pulse-red 2s infinite;
+}
+
+/* Custom scrollbars for the dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 14, 26, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Glass card hover effects */
+.glass-card {
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+/* Loading skeleton animation */
+@keyframes skeleton-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+
+/* Safety status transitions */
+.status-green { color: var(--accent-green); }
+.status-yellow { color: var(--accent-yellow); }
+.status-red { color: var(--accent-red); }
+
+/* Animated gradient border for Comms terminal */
+@keyframes border-gradient-rotate {
+  0%   { border-color: rgba(6,182,212,0.1); }
+  50%  { border-color: rgba(0,180,255,0.25); }
+  100% { border-color: rgba(6,182,212,0.1); }
+}
+
+.comms-animated-border {
+  animation: border-gradient-rotate 4s ease-in-out infinite;
+}
+
+/* Leaflet maps custom dark theme adjustments */
+.leaflet-container {
+  background: #0a0e1a !important;
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--bg-card) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* Custom Leaflet divIcon overrides */
+.leaflet-marker-icon.custom-pulse-icon,
+.leaflet-marker-icon.custom-train-icon {
+  background: none;
+  border: none;
+}
+
+/* Smooth safety status color transitions */
+.status-indicator {
+  transition: color 0.6s ease, background-color 0.6s ease, border-color 0.6s ease;
+}
