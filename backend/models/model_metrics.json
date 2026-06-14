@@ -1,0 +1,79 @@
+{
+  "binary_classifier": {
+    "accuracy": 0.8362,
+    "precision": 0.9363,
+    "recall": 0.8285,
+    "f1_score": 0.8791,
+    "training_time_seconds": 54.7
+  },
+  "severity_classifier": {
+    "accuracy": 0.6791,
+    "num_classes": 3,
+    "severity_labels": {
+      "0": "On Time",
+      "1": "Moderate Delay",
+      "2": "Severe Delay"
+    },
+    "training_time_seconds": 131.7
+  },
+  "regressor": {
+    "mae_minutes": 33.57,
+    "rmse_minutes": 46.38,
+    "r2_score": 0.509,
+    "training_time_seconds": 34.7
+  },
+  "training_info": {
+    "total_rows": 1500000,
+    "train_rows": 1200000,
+    "test_rows": 300000,
+    "n_features": 24,
+    "feature_columns": [
+      "train_type",
+      "month",
+      "is_night_departure",
+      "is_festival_season",
+      "season",
+      "scheduled_travel_hours",
+      "track_doubled",
+      "is_hdn_route",
+      "traction_type",
+      "psr_count",
+      "is_monsoon_season",
+      "is_fog_risk",
+      "fog_risk_score",
+      "zone_congestion_index",
+      "season_severity_score",
+      "loco_age_years",
+      "coach_age_years",
+      "has_lhb_coaches",
+      "is_rake_shared",
+      "late_incoming_rake",
+      "route_historical_ontime_pct",
+      "avg_speed_kmph",
+      "infra_score",
+      "risk_score"
+    ]
+  },
+  "feature_importance": {
+    "risk_score": 0.3311,
+    "late_incoming_rake": 0.2122,
+    "is_monsoon_season": 0.0978,
+    "season_severity_score": 0.0526,
+    "is_fog_risk": 0.0442,
+    "track_doubled": 0.0407,
+    "avg_speed_kmph": 0.0401,
+    "season": 0.0373,
+    "route_historical_ontime_pct": 0.0269,
+    "train_type": 0.0221,
+    "zone_congestion_index": 0.0153,
+    "is_festival_season": 0.0106,
+    "traction_type": 0.0096,
+    "is_rake_shared": 0.0096,
+    "is_hdn_route": 0.0086,
+    "has_lhb_coaches": 0.0069,
+    "infra_score": 0.0069,
+    "is_night_departure": 0.0057,
+    "loco_age_years": 0.0048,
+    "month": 0.0044
+  }
+}

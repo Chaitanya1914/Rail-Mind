@@ -1,0 +1,54 @@
+{
+  "total_rows": 114,
+  "total_columns": 10,
+  "columns": [
+    "X",
+    "environment",
+    "train_name",
+    "injured",
+    "killed",
+    "triggering_factor",
+    "time",
+    "railway_division",
+    "cause",
+    "env"
+  ],
+  "numeric_columns": [
+    "X",
+    "injured",
+    "killed"
+  ],
+  "categorical_columns": [
+    "environment",
+    "train_name",
+    "triggering_factor",
+    "time",
+    "railway_division",
+    "cause",
+    "env"
+  ],
+  "null_counts": {
+    "X": 0,
+    "environment": 8,
+    "train_name": 0,
+    "injured": 4,
+    "killed": 3,
+    "triggering_factor": 25,
+    "time": 0,
+    "railway_division": 0,
+    "cause": 0,
+    "env": 0
+  },
+  "dtypes": {
+    "X": "int64",
+    "environment": "object",
+    "train_name": "object",
+    "injured": "float64",
+    "killed": "float64",
+    "triggering_factor": "object",
+    "time": "object",
+    "railway_division": "object",
+    "cause": "object",
+    "env": "object"
+  }
+}

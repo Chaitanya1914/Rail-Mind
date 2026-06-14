@@ -1,0 +1,66 @@
+{
+  "train_type": {
+    "DEMU/MEMU": 0,
+    "Duronto Express": 1,
+    "Garib Rath Express": 2,
+    "Gatimaan Express": 3,
+    "Humsafar Express": 4,
+    "Intercity Express": 5,
+    "Jan Shatabdi Express": 6,
+    "Mail/Express": 7,
+    "Passenger Train": 8,
+    "Rajdhani Express": 9,
+    "Sampark Kranti Express": 10,
+    "Shatabdi Express": 11,
+    "Superfast Express": 12,
+    "Tejas Express": 13,
+    "Vande Bharat Express": 14
+  },
+  "season": {
+    "Autumn": 0,
+    "Monsoon": 1,
+    "Post-Monsoon": 2,
+    "Pre-Monsoon": 3,
+    "Summer": 4,
+    "Winter/Fog": 5
+  },
+  "zone_abbr": {
+    "CR": 0,
+    "ECR": 1,
+    "ECoR": 2,
+    "ER": 3,
+    "NCR": 4,
+    "NER": 5,
+    "NFR": 6,
+    "NR": 7,
+    "NWR": 8,
+    "SCR": 9,
+    "SECR": 10,
+    "SER": 11,
+    "SR": 12,
+    "SWR": 13,
+    "WCR": 14,
+    "WR": 15
+  },
+  "source_station_category": {
+    "A": 0,
+    "A1": 1,
+    "B": 2,
+    "C": 3,
+    "D": 4,
+    "E": 5
+  },
+  "destination_station_category": {
+    "A": 0,
+    "A1": 1,
+    "B": 2,
+    "C": 3,
+    "D": 4,
+    "E": 5
+  },
+  "traction_type": {
+    "Diesel": 0,
+    "Dual": 1,
+    "Electric (25kV AC)": 2
+  }
+}

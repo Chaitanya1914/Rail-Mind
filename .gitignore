@@ -1,0 +1,10 @@
+
+.env
+backend/.env
+venv/
+__pycache__/
+*.pt
+*.pyc
+backend/data/ir_train.csv
+backend/data/ir_train_clean.csv
+backend/data/*.csv

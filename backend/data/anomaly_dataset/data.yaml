@@ -1,0 +1,13 @@
+train: C:/Users/chait/OneDrive/Desktop/Faraway Hackathon/railmind/backend/data/anomaly_dataset/train/images
+val: C:/Users/chait/OneDrive/Desktop/Faraway Hackathon/railmind/backend/data/anomaly_dataset/valid/images
+test: C:/Users/chait/OneDrive/Desktop/Faraway Hackathon/railmind/backend/data/anomaly_dataset/test/images
+
+nc: 5
+names: ['Defective Joint', 'Good Fasteners', 'Good Joint', 'Missing Dogscrew', 'Missing Fastener']
+
+roboflow:
+  workspace: railway-defects-osolv
+  project: fastener-detection-7a3vn
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/railway-defects-osolv/fastener-detection-7a3vn/dataset/1
