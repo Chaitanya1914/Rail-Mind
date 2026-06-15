@@ -1,7 +1,6 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/RailMind-Agentic%20OS-blue?style=for-the-badge&logo=train&logoColor=white" alt="RailMind Banner" />
-  <h1>🚆 RailMind: Autonomous Railway Operating System</h1>
-  <p><strong>A Multi-Agent ReAct System powered by Gemini, YOLOv8, and XGBoost to predict delays, ensure safety, and autonomously detect track defects.</strong></p>
+  <h1>RailMind: Autonomous Railway Operating System</h1>
+  <p><strong>An Agentic Infrastructure OS leveraging ReAct workflows, Computer Vision, and Predictive Machine Learning to automate railway safety and scheduling operations.</strong></p>
   
   [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://python.org)
   [![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-green.svg)](https://fastapi.tiangolo.com)
@@ -12,98 +11,89 @@
 
 <br/>
 
-## 🌟 The Problem
-The Indian Railways network is one of the largest in the world, handling millions of passengers daily. However, it is plagued by three major inefficiencies:
-1. **Unpredictable Delays:** Relying on static schedules rather than real-time data.
-2. **Manual Track Inspections:** Human laborers walking thousands of kilometers of track to find defects.
-3. **Reactive Safety:** Responding to accidents *after* they happen rather than predicting risk zones.
+## Executive Summary
+The Indian Railways network handles vast logistical and passenger loads daily. Current operational paradigms rely heavily on static scheduling and manual track inspections, leading to compounded delays and delayed responses to critical infrastructure failures.
 
-## 🚀 The Solution: RailMind
-RailMind replaces legacy, fragmented systems with a **single conversational AI orchestrator**. 
-Instead of a simple chatbot, RailMind is a true **ReAct (Reasoning + Acting) Agent**. When a user asks a question, the Orchestrator dynamically routes the task to specialized Machine Learning agents, processes the data, and returns actionable insights in real-time.
+**RailMind** is an enterprise-grade, Multi-Agent Autonomous Operating System designed to replace legacy rail management infrastructure. By unifying Computer Vision, Graph Theory, and Predictive Machine Learning under a central Large Language Model (LLM) Orchestrator, RailMind shifts railway management from a reactive system to an autonomous, predictive infrastructure.
 
 ---
 
-## 🧠 System Architecture
+## Agentic Architecture
 
-Our backend relies on a Master Orchestrator and 4 Specialized ML Agents.
+RailMind operates on a highly decoupled microservices architecture. User queries and system events are parsed by a central Orchestrator, which dynamically routes execution tasks to five specialized sub-agents. 
 
-### 1. 🤖 The Orchestrator (Google Gemini 2.5)
-The brain of the system. It parses natural language (e.g., *"Is train 12301 delayed, and are there track cracks near Delhi?"*) and automatically invokes the correct Python tools in the backend without human intervention.
+### 1. The Central Orchestrator
+Powered by Google Gemini 2.5 Flash, the Orchestrator acts as the cognitive routing engine. It utilizes a ReAct (Reasoning and Acting) framework to parse complex natural language inputs, determine required computational steps, and invoke the appropriate ML backend agents autonomously.
 
-### 2. 👁️ Anomaly Agent (Computer Vision)
-A custom-trained **YOLOv8** Object Detection model. It analyzes drone/camera images of railway tracks to identify physical defects such as **cracks, loose fasteners, and broken sleepers** with high accuracy.
+### 2. Anomaly Detection Agent (Computer Vision)
+Utilizes a custom-trained **YOLOv8** Object Detection model built on PyTorch. This agent processes drone and track-side camera feeds to identify structural defects, including micro-fractures, missing fasteners, and degraded sleepers, enabling predictive maintenance prior to catastrophic failure.
 
-### 3. ⏱️ Delay Agent (Predictive ML)
-Powered by an **XGBoost Classifier** trained on 1.5 million historical Indian Railway records. It predicts the probability of severe train delays based on weather, station congestion, and historical precedence.
+### 3. Delay Prediction Agent (Machine Learning)
+An **XGBoost Classifier** trained on an extensive dataset of 1.5 million historical Indian Railway transit records. It evaluates real-time variables such as weather conditions, station congestion, and historical precedence to output probabilistic forecasts of train delays.
 
-### 4. 🛡️ Safety Agent (Risk Profiling)
-Analyzes historical train accident data to generate live "Danger Scores" for specific trains and zones, factoring in seasonal risks (e.g., monsoon flooding) and infrastructure age.
+### 4. Safety & Risk Profiling Agent
+A statistical risk analysis engine. It cross-references live train telemetry with historical accident data to generate real-time "Danger Scores." It factors in seasonal environmental risks (e.g., monsoon flooding zones) and hardware degradation metrics.
 
-### 5. 🛤️ Routing Agent (Graph Networks)
-Uses **NetworkX** to map 8,000+ stations and 5,000+ routes as a computational graph. It instantly calculates the shortest paths and alternative detours if a primary route is blocked by an accident.
+### 5. Routing Optimization Agent (Graph Theory)
+Powered by **NetworkX**, this agent models the railway network as a computational graph comprising over 8,000 stations and 5,000 transit routes. It executes real-time pathfinding algorithms to calculate optimal detours and rerouting solutions during track blockages or high-risk safety alerts.
+
+### 6. Communication & Alerting Agent
+A hybrid translation agent that parses raw JSON outputs from the predictive models and translates them into actionable, human-readable crisis alerts. It utilizes an LLM for dynamic alert generation, with a strict fallback to deterministic offline templates in the event of API latency.
 
 ---
 
-## 💻 Tech Stack
-* **Frontend:** Next.js, React, TailwindCSS, TypeScript
-* **Backend:** FastAPI, Python, Uvicorn, LocalTunnel
-* **Machine Learning:** PyTorch, Ultralytics (YOLOv8), XGBoost, Scikit-Learn, Pandas, NetworkX
+## Technical Stack
+* **Frontend Application:** Next.js, React, TailwindCSS, TypeScript
+* **Backend Infrastructure:** FastAPI, Python, Uvicorn
+* **Data Science & ML Pipeline:** PyTorch, Ultralytics (YOLOv8), XGBoost, Scikit-Learn, Pandas, NetworkX
 * **LLM Engine:** Google Gemini 2.5 Flash API
 
 ---
 
-## 🛠️ Installation & Setup
+## Deployment Instructions
 
-### 1. Clone the Repository
+### 1. Repository Initialization
 ```bash
 git clone https://github.com/Chaitanya1914/Rail-Mind.git
 cd Rail-Mind
 ```
 
-### 2. Backend Setup (AI & ML)
+### 2. Backend Environment (AI/ML Services)
 ```bash
-# Navigate to the backend folder
 cd backend
 
-# Create and activate a virtual environment
+# Initialize isolated environment
 python -m venv venv
-# On Windows: .\venv\Scripts\activate
-# On Mac/Linux: source venv/bin/activate
+# Windows: .\venv\Scripts\activate
+# Unix: source venv/bin/activate
 
-# Install required heavy ML dependencies
+# Install dependencies
 pip install fastapi uvicorn pandas scikit-learn xgboost networkx ultralytics torch torchvision google-generativeai python-dotenv
 
-# Set up your Environment Variables
+# Configure API Authentication
 echo "GEMINI_API_KEY=your_google_api_key_here" > .env
 
-# Start the FastAPI Server
+# Initialize FastAPI Server
 python main.py
 ```
 
-### 3. Start the Secure Tunnel
-To allow the frontend to communicate with your local ML backend:
+### 3. Local Tunneling
+To expose the local ML server securely to the frontend during development:
 ```bash
-npx localtunnel --port 8000 --subdomain railmind-hackathon
+npx localtunnel --port 8000
 ```
 
-### 4. Frontend Setup
+### 4. Frontend Compilation
 ```bash
-cd frontend
+cd frontend/railmind/frontend
 npm install
 npm run dev
 ```
 
 ---
 
-## 🔮 Future Work & Scalability
-While this hackathon prototype runs locally, the production architecture is designed to be highly scalable:
-- **IoT Integration:** Connecting the YOLOv8 Anomaly Agent to live drone camera feeds instead of static images.
-- **Live APIs:** Replacing static Kaggle CSV datasets with live WebSocket connections to the IRCTC / NTES systems.
-- **Cloud Deployment:** Dockerizing the FastAPI backend and deploying it to AWS ECS or Google Kubernetes Engine (GKE) with auto-scaling GPU nodes for the computer vision models.
-
----
-
-<div align="center">
-  <i>Built with passion for the Faraway Hackathon. Transforming the future of railways.</i>
-</div>
+## Scalability and Production Roadmap
+While the current iteration serves as a localized prototype for rapid evaluation, the architecture is engineered for cloud-native deployment:
+- **Streaming IoT Ingestion:** Transitioning the YOLOv8 inference engine from static batch processing to live RTSP camera feeds using Apache Kafka.
+- **Data Warehousing:** Migrating from static CSV datasets to live REST API integrations with the NTES (National Train Enquiry System).
+- **Containerization:** Complete Dockerization of the FastAPI microservices for orchestration via Kubernetes (GKE), enabling auto-scaling GPU nodes for the computer vision workloads.
